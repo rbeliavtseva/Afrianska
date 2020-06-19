@@ -1,0 +1,90 @@
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 220px;
+  min-height: 56px;
+  padding: 14px 48px 16px 48px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  color: $color-white;
+  background-color: $color-blue-lighter;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &--shadow {
+    box-shadow: 5px 10px 20px rgba($color-blue-shadow, 0.2);
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      box-shadow: 5px 10px 20px rgba($color-blue-shadow, 0.6);
+    }
+  }
+
+  &--arrow {
+    position: relative;
+    padding: 0;
+    min-width: auto;
+    min-height: auto;
+    padding-right: 44px;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: $color-blue-lighter;
+    background-color: transparent;
+    box-shadow: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url("../img/icon-arrow.svg");
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      opacity: 1;
+
+      &::after {
+        @keyframes MoveRightLeft {
+          0%, 100% {
+            right: 0;
+          }
+          50% {
+            right: 5px;
+          }
+        }
+        animation: MoveRightLeft 1s linear infinite;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .button {
+    min-width: 180px;
+    font-size: 14px;
+    line-height: 24px;
+
+    &--arrow {
+      min-width: auto;
+    }
+  }
+}

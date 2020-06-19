@@ -1,0 +1,110 @@
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 940px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: list;
+}
+
+.clients-list__item {
+  width: calc(100% / 4);
+  padding: 37px 40px 43px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 46px;
+  letter-spacing: 0.02em;
+  list-style-type: none;
+
+  &::after {
+    counter-increment: list;
+    content: counter(list) " ";
+  }
+
+  &:nth-child(-n + 3){
+    border-right: 1px solid $color-white;
+  }
+
+  &:nth-child(-n + 4) {
+    border-bottom: 1px solid $color-white;
+  }
+
+  &:nth-last-child(-n + 4){
+    border-right: 1px solid $color-white;
+  }
+
+  &:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: none;
+    background-color: rgba($color-blue, 0.2);
+    text-transform: none;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.clients-list__item span {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 3px;
+}
+
+@media (max-width: $tablet-max-width) {
+  .clients-list__item {
+    padding: 37px 20px 43px 20px;
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  .clients-list__item span {
+    padding-right: 4px;
+  }
+}
+
+@media (max-width: $tablet-small-width) {
+  .clients-list__item {
+    padding: 37px 10px 43px 10px;
+    font-size: 16px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .clients-list__item {
+    width: calc(100% / 2);
+    padding: 20px 10px 35px 10px;
+    font-size: 14px;
+    line-height: 24px;
+
+    &:nth-child(-n + 3){
+      border-right: none;
+    }
+
+    &:nth-child(-n + 6) {
+      border-bottom: 1px solid $color-white;
+    }
+
+    &:nth-last-child(-n + 4){
+      border-right: none;
+    }
+
+    &:nth-child(2n + 1) {
+      border-right: 1px solid $color-white;
+    }
+
+    &:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: none;
+      background-color: rgba($color-blue, 0.2);
+      text-transform: none;
+    }
+  }
+}

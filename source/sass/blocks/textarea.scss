@@ -1,0 +1,42 @@
+.textarea {
+  height: 144px;
+  padding: 24px 36px;
+  border: 1px solid rgba($color-blue-shadow, 0.4);
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: $color-blue;
+  resize: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba($color-blue-shadow, 1);
+  }
+
+  &::placeholder {
+    letter-spacing: 0.04em;
+    color: rgba($color-blue, 0.2);
+  }
+
+  &:-moz-placeholder {
+    letter-spacing: 0.04em;
+    color: rgba($color-blue, 0.2);
+  }
+
+  &::-moz-p {
+    letter-spacing: 0.04em;
+    color: rgba($color-blue, 0.2);
+  }
+
+  &:-ms-input-placeholder {
+    letter-spacing: 0.04em;
+    color: rgba($color-blue, 0.2);
+  }
+}
+
+
+@media (max-width: $mobile-max-width) {
+  .textarea {
+    padding: 10px;
+  }
+}

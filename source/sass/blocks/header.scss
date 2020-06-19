@@ -1,0 +1,25 @@
+.header {
+  padding: 40px 83px 0 83px;
+}
+
+.header__aligner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $desktop-width;
+  margin: 0 auto;
+}
+
+@media (max-width: $tablet-max-width) {
+  .header__aligner {
+    max-width: $tablet-width;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .header {
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

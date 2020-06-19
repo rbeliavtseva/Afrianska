@@ -1,0 +1,49 @@
+.contacts {
+  letter-spacing: 0.05em;
+}
+
+.contacts__item {
+  display: block;
+  position: relative;
+  margin: 0;
+  margin-bottom: 22px;
+  padding-left: 36px;
+  text-decoration: none;
+  color: inherit;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &--address {
+    &::before {
+      content: "A.";
+    }
+  }
+
+  &--tel {
+    &::before {
+      content: "T.";
+    }
+  }
+
+  &--email {
+    &::before {
+      content: "E.";
+    }
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .contacts__item {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,139 @@
+.main-screen {
+  padding-top: 92px;
+  padding-left: 212px;
+  padding-right: 50px;
+  padding-bottom: 190px;
+  background-image: linear-gradient(0deg, rgba($color-blue-gradient, 0.2) 8.84%, rgba($color-blue-gradient, 0) 31.12%);
+  background-size: cover;
+}
+
+.main-screen__aligner {
+  position: relative;
+  max-width: $desktop-width;
+  height: 100%;
+  margin: 0 auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -26px;
+    top: -91px;
+    background-image: url("../img/illustration.svg");
+    width: 687px;
+    height: 625px;
+    background-size: 687px 625px;
+    background-repeat: no-repeat;
+  }
+}
+
+.main-screen__content-wrap {
+  width: 525px;
+  position: relative;
+  z-index: 2;
+}
+
+.main-screen__slogan {
+  margin: 0;
+  margin-bottom: 40px;
+  font-family: "Galien", "Times New Roman", serif;
+  font-size: 64px;
+  line-height: 74px;
+  letter-spacing: 0.05em;
+  color: $color-blue;
+}
+
+.main-screen__text {
+  padding-right: 95px;
+  margin: 0;
+  margin-bottom: 76px;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.05em;
+  color: rgba($color-blue, 0.6);
+}
+
+@media (max-width: $tablet-max-width) {
+  .main-screen__text {
+    width: 65%;
+    padding-right: 0;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .main-screen {
+    padding-left: 80px;
+    padding-bottom: 150px;
+  }
+
+  .main-screen__aligner {
+    max-width: $tablet-width;
+
+    &::after {
+      top: -42px;
+      right: -8%;
+      width: 407px;
+      height: 345px;
+      background-size: 407px 345px;
+    }
+  }
+
+  .main-screen__content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .main-screen__slogan {
+    margin-bottom: 30px;
+    padding-right: 160px;
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .main-screen {
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 100px;
+  }
+
+  .main-screen__aligner {
+    max-width: none;
+    padding-top: 250px;
+
+    &::after {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 307px;
+      height: 245px;
+      background-size: 307px 245px;
+    }
+  }
+
+  .main-screen__content-wrap {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-screen__slogan {
+    width: 100%;
+    padding-right: 0;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+  }
+
+  .main-screen__text {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    background-color: transparent;
+  }
+}
