@@ -94,11 +94,11 @@
 
 @media (max-width: $mobile-max-width) {
   .footer__background-container {
-    margin-right: 50px;
-    padding: 100px 50px 60px 50px;
+    margin-right: 35px;
+    padding: 100px 35px 60px;
 
     &::before {
-      width: calc(100% - 50px);
+      width: calc(100% - 35px);
     }
   }
 
